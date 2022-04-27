@@ -1,0 +1,18 @@
+{
+  "src_folders": [],
+  "webdriver": {
+    "server_path": "node_modules/.bin/chromedriver",
+    "cli_args": [
+      "--verbose"
+    ],
+    "port": 9515
+  },
+  "test_settings": {
+    "default": {
+      "launch_url": "https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=1000&urut=1&asc=000101&sby=000000&_en=ENGLISH&no1=0&no2=1000",
+      "desiredCapabilities" : {
+        "browserName" : "chrome"
+      }
+    }
+  }
+}
