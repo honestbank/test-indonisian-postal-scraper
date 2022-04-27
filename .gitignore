@@ -11,6 +11,7 @@
 
 # ##########################################################
 # Project-specific ignores - use for excluding binaries, etc
+postal-code-merged.json
 
 # #######
 # General
