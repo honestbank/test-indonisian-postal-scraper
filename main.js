@@ -34,7 +34,7 @@ function getProvince(element, row) {
 
 async function getTotalNumberOfCities(browser) {
     let result = await browser.getText("/html/body/table/tbody/tr/td/table[2]/tbody/tr[2]/td/table/tbody/tr[2]/td/center/table/tbody/tr[2]/td/div/b/font")
-    result = result.replaceAll(',', '')
+    result = result.replaceAll('.', '')
     return parseInt(result)
 }
 
@@ -63,7 +63,7 @@ module.exports = {
         const numberOfCities = await getTotalNumberOfCities(browser)
         console.log(`scraping ${numberOfCities} of cities`)
         const increment = 1000
-        let cursor = 83001
+        let cursor = 1
         while(cursor < numberOfCities) {
             let to = cursor + increment - 1;
             if(to > numberOfCities) {
@@ -79,7 +79,7 @@ module.exports = {
             console.log('finished')
             console.log(`moving to next page from ${cursor} to ${to}`)
             if(data.length < numberOfCities) {
-                await browser.url(`https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=${increment}&urut=1&asc=000101&sby=000000&_en=ENGLISH&no1=${cursor}&no2=${to}`)
+                await browser.url(`https://www.nomor.net/_kodepos.php?_i=desa-kodepos&daerah=&jobs=&perhal=${increment}&urut=1&asc=000101&sby=000000&no1=${cursor}&no2=${to}`)
             }
             cursor += increment
             to = cursor + increment - 1;
