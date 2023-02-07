@@ -1,0 +1,1 @@
+TRUNCATE TABLE postal_code_mapping
